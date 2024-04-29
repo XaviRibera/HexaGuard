@@ -4,8 +4,8 @@ USE hexaGuard;
 
 CREATE TABLE user (
 id INT NOT NULL PRIMARY KEY,
-user_name CHAR(50) NOT NULL,
-email CHAR(50) NOT NULL,
+user_name VARCHAR(50) NOT NULL,
+email CHAR(255) NOT NULL,
 password CHAR(59) NOT NULL,
 phone_number INT
 );
