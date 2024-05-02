@@ -1,22 +1,16 @@
 use hexaGuard;
-INSERT INTO users (user_name, email, password, phone_number) VALUES
-('john_doe', 'john_doe@example.com', 'password123', 123456789),
-('jane_smith', 'jane_smith@example.com', 'password456', 987654321),
-('mark_johnson', 'mark_johnson@example.com', 'password789', 555555555),
-('emily_wilson', 'emily_wilson@example.com', 'passwordabc', 777777777),
-('david_brown', 'david_brown@example.com', 'passworddef', 999999999);
 
-INSERT INTO labels (name, color_code, description, user_id) VALUES
-('personal', '#3366FF', 'Etiqueta personal', '1'),
-('trabajo', '#FF6600', 'Etiqueta de trabajo', '1'),
-('personal', '#3366FF', 'Etiqueta personal', '2'),
-('trabajo', '#FF6600', 'Etiqueta de trabajo', '2'),
-('hogar', '#00CC66', 'Etiqueta de hogar', '3'),
-('importante', '#FF0000', 'Etiqueta importante', '3'),
-('viaje', '#993399', 'Etiqueta de viaje', '4'),
-('personal', '#3366FF', 'Etiqueta personal', '4'),
-('trabajo', '#FF6600', 'Etiqueta de trabajo', '5'),
-('hogar', '#00CC66', 'Etiqueta de hogar', '5');
+INSERT INTO labels (name, color_code, description) VALUES
+('personal', '#3366FF', 'Etiqueta personal'),
+('trabajo', '#FF6600', 'Etiqueta de trabajo'),
+('personal', '#3366FF', 'Etiqueta personal'),
+('trabajo', '#FF6600', 'Etiqueta de trabajo'),
+('hogar', '#00CC66', 'Etiqueta de hogar'),
+('importante', '#FF0000', 'Etiqueta importante'),
+('viaje', '#993399', 'Etiqueta de viaje'),
+('personal', '#3366FF', 'Etiqueta personal'),
+('trabajo', '#FF6600', 'Etiqueta de trabajo'),
+('hogar', '#00CC66', 'Etiqueta de hogar');
 
 INSERT INTO records (title, page_direction, user_name, password, description, label_id, user_id) VALUES
 ('Título 1', 'Dirección de página 1', 'john_doe', 'clave1', 'Descripción 1', '1', '1'),
