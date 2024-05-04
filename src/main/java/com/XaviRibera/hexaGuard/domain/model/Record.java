@@ -9,10 +9,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-    private int id;
-    private String name;
-    private String email;
+public class Record {
+    private Integer id;
+    private String title;
+    private String pageDirection;
+    private String userName;
     private String password;
-    private String phoneNumber;
+    private String description;
+    private Integer labelId;
 }
