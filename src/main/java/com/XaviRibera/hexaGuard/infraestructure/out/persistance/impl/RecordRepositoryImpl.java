@@ -33,6 +33,7 @@ public class RecordRepositoryImpl implements RecordRepositoryPort {
     }
 
     @Override
+    @Transactional
     public Record save(Record record) {
         return RecordMapperRepository.toRecord(recordDAO.save(RecordMapperRepository.toRecordEntity(record)));
     }
