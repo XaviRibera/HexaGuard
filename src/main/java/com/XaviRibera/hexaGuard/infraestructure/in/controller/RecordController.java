@@ -53,14 +53,16 @@ public class RecordController {
     }
 
     @PutMapping("/{recordId}")
-    public ResponseEntity<RecordDetailWeb> update(@RequestBody RecordUpdateWeb recordUpdateWeb, @PathVariable int recordId) {
-        RecordDetailWeb recordDetailWeb = RecordMapperController.toRecordDetailWeb(recordService.update(recordId, RecordMapperController.toRecord(recordUpdateWeb)));
+    public ResponseEntity<RecordDetailWeb> update(@RequestBody RecordUpdateWeb recordUpdateWeb,
+            @PathVariable int recordId) {
+        RecordDetailWeb recordDetailWeb = RecordMapperController
+                .toRecordDetailWeb(recordService.update(recordId, RecordMapperController.toRecord(recordUpdateWeb)));
         return new ResponseEntity<>(recordDetailWeb, HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/{recordId}")
     public ResponseEntity<Void> delete(@PathVariable int recordId) {
-        if(recordService.delete(recordId)){
+        if (recordService.delete(recordId)) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
