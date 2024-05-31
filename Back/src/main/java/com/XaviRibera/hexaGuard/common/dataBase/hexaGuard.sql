@@ -6,7 +6,7 @@ CREATE TABLE labels (
 id INT NOT NULL PRIMARY KEY,
 name VARCHAR(30) NOT NULL,
 color_code VARCHAR(7) NOT NULL,
-description VARCHAR(30)
+description VARCHAR(300)
 );
 
 CREATE TABLE records (

@@ -1,0 +1,32 @@
+<mat-expansion-panel class="c-item" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{record.title}}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{panelOpenState ? '' : record.pageDirection}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <table>
+    <tr>
+        <th>Campo</th>
+        <th>Valor</th>
+    </tr>
+    <tr>
+        <td>Page Direction</td>
+        <td>{{record.pageDirection}}</td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>{{record.userName}}</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>{{record.password}}</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>{{record.description}}</td>
+    </tr>
+</table>
+</mat-expansion-panel>

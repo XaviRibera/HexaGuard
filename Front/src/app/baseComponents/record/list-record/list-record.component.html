@@ -1,0 +1,11 @@
+<div class="l-lists">
+  <div class="c-list-records" [ngStyle]="{ 'border-color' : label.colorCode}">
+    <h1>{{label.name}}</h1>
+    <div *ngIf="records.length">
+      <app-list-record-item *ngFor="let record of records" [record]="record"></app-list-record-item>
+    </div>
+    <div *ngIf="!records.length">
+      No se han encontrado entradas!!
+    </div>
+  </div>
+</div>

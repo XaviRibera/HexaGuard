@@ -17,7 +17,6 @@ import com.XaviRibera.hexaGuard.application.service.RecordService;
 import com.XaviRibera.hexaGuard.infraestructure.in.controller.mapper.RecordMapperController;
 import com.XaviRibera.hexaGuard.infraestructure.in.controller.modelWeb.record.RecordCreateWeb;
 import com.XaviRibera.hexaGuard.infraestructure.in.controller.modelWeb.record.RecordDetailWeb;
-import com.XaviRibera.hexaGuard.infraestructure.in.controller.modelWeb.record.RecordListWeb;
 import com.XaviRibera.hexaGuard.infraestructure.in.controller.modelWeb.record.RecordUpdateWeb;
 
 @RestController
@@ -31,11 +30,11 @@ public class RecordController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<RecordListWeb>> getAll() {
-        List<RecordListWeb> recordListWebs = recordService.getAll().stream()
-                .map(record -> RecordMapperController.toRecordListWeb(record))
+    public ResponseEntity<List<RecordDetailWeb>> getAll() {
+        List<RecordDetailWeb> recordDetailWebs = recordService.getAll().stream()
+                .map(record -> RecordMapperController.toRecordDetailWeb(record))
                 .toList();
-        return new ResponseEntity<>(recordListWebs, HttpStatus.OK);
+        return new ResponseEntity<>(recordDetailWebs, HttpStatus.OK);
     }
 
     @GetMapping("/{recordId}")

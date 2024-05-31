@@ -1,0 +1,17 @@
+.c-item{
+  margin: 3px;
+}
+
+table {
+  width: 50%;
+  margin: 20px;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  border: none;
+  padding: 8px;
+  text-align: left;
+}

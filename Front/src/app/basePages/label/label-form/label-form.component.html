@@ -1,0 +1,46 @@
+<div *ngIf="!succesSend">
+  <form
+    (ngSubmit)="sendNewLabelInfo()"
+    [formGroup]="newLabelForm"
+    autocomplete="off"
+    class="c-form"
+  >
+    <h2 class="c-form__title">Formulario para nueva etiqueta</h2>
+    <div class="form-group">
+      <div class="c-form__name">
+        <mat-label for="name">Nombre: </mat-label>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Personal, banco, ..." formControlName="name" id="name">
+          <mat-error *ngIf="newLabelForm.get('name')?.hasError('required')">
+            Campo <strong>requerido</strong>
+          </mat-error>
+          <mat-error *ngIf="newLabelForm.get('name')?.hasError('minlength')">
+            Minimo <strong>3 caracteres</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="c-form__color">
+        <mat-label for="colorCode">Color: </mat-label>
+        <mat-form-field>
+          <input matInput placeholder="#000000" id="colorCode" type="color" formControlName="colorCode">
+        </mat-form-field>
+      </div>
+      <div class="c-form__description">
+        <label for="description">Description: </label>
+        <mat-form-field>
+          <textarea matInput class="c-full-width" #description id="description" formControlName="description" maxlength="300"></textarea>
+          <mat-hint align="start">Descripcion corta.</mat-hint>
+          <mat-hint align="end">{{description.value.length}}/300</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div></div>
+    <button type="button" mat-raised-button color="primary" (click)="sendNewLabelInfo()">Enviar</button>
+  </form>
+
+</div>
+<div *ngIf="succesSend" class="c-succes-section">
+    <div>Etiqueta añadida correctamente</div>
+    <button type="button" mat-raised-button color="primary" routerLink="/records">Volver a las listas</button>
+</div>
+

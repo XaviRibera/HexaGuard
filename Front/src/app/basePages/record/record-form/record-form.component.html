@@ -1,0 +1,75 @@
+<div *ngIf="!succesSend">
+  <form
+    (ngSubmit)="sendNewRecordInfo()"
+    [formGroup]="newRecordForm"
+    autocomplete="off"
+    class="c-form"
+  >
+    <h2 class="c-form__title">Formulario para nueva Entrada</h2>
+    <div class="form-group">
+
+      <div class="">
+        <mat-label for="title">Nombre: </mat-label>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Titulo" formControlName="title" id="title">
+          <mat-error *ngIf="newRecordForm.get('title')?.hasError('required')">
+            Campo <strong>requerido</strong>
+          </mat-error>
+          <mat-error *ngIf="newRecordForm.get('title')?.hasError('maxlength')">
+            Maximo <strong>50 caracteres</strong>.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-label for="pageDirection">Direccion de la pagina: </mat-label>
+        <mat-form-field>
+          <input matInput placeholder="www.ejemplo.es" id="pageDirection" formControlName="pageDirection">
+          <mat-error *ngIf="newRecordForm.get('pageDirection')?.hasError('maxlength')">
+            Maximo <strong>200 caracteres</strong>.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-label for="userName">Nombre de usuario: </mat-label>
+        <mat-form-field>
+          <input matInput placeholder="EjemploUser" id="userName" formControlName="userName">
+          <mat-error *ngIf="newRecordForm.get('userName')?.hasError('maxlength')">
+            Maximo <strong>50 caracteres</strong>.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <mat-label for="password">Contraseña: </mat-label>
+        <mat-form-field>
+          <input matInput placeholder="Contraseña" id="password" formControlName="password">
+          <mat-error *ngIf="newRecordForm.get('password')?.hasError('required')">
+            Campo <strong>requerido</strong>
+          </mat-error>
+          <mat-error *ngIf="newRecordForm.get('password')?.hasError('maxlength')">
+            Maximo <strong>50 caracteres</strong>.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="">
+        <label for="description">Description: </label>
+        <mat-form-field>
+          <textarea matInput class="c-full-width" #description id="description" formControlName="description" maxlength="300"></textarea>
+          <mat-hint align="start">Descripcion corta.</mat-hint>
+          <mat-hint align="end">{{description.value.length}}/300</mat-hint>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div></div>
+    <button class="c-full-width" type="button" mat-raised-button color="primary" (click)="sendNewRecordInfo()">Enviar</button>
+  </form>
+
+</div>
+<div *ngIf="succesSend" class="c-succes-section">
+    <div>Etiqueta añadida correctamente</div>
+    <button type="button" mat-raised-button color="primary" routerLink="/records">Volver a las listas</button>
+</div>

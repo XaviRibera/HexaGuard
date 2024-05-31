@@ -1,0 +1,39 @@
+.c-form {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: whitesmoke;
+  margin-top: 50px;
+  border-radius: 5px;
+  border: 3px solid black;
+
+  &__title{
+    grid-area: title;
+  }
+
+  &__name {
+    grid-area: name;
+    width: 100%;
+  }
+
+  &__color {
+    grid-area: color;
+  }
+
+  &__description {
+    grid-area: description;
+  }
+}
+
+.c-full-width {
+  width: 100%;
+}
+
+.c-succes-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  flex-direction: column;
+  gap: 25px;
+}

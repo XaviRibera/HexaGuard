@@ -1,0 +1,18 @@
+.c-lists {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+
+  &__buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__items {
+    width: 100%;
+  }
+}
+

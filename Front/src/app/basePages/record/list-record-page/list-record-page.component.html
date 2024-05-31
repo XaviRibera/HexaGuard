@@ -1,0 +1,11 @@
+<div class="c-lists">
+  <div class="c-lists__buttons">
+    <button mat-raised-button color="primary" routerLink="/records/form">Nueva entrada</button>
+    <button mat-raised-button color="primary" routerLink="/labels">Nueva etiqueta</button>
+  </div>
+  <div class="c-lists__items">
+    <app-list-record *ngFor="let label of LABELS" [label]="label" [records]='filterList(label.id)'></app-list-record>
+  </div>
+</div>
+
+
